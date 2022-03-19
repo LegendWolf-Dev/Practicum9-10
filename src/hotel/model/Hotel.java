@@ -48,7 +48,18 @@ public class Hotel {
 
 		if (beschikbareKamer == null) {
 			throw new Exception("Geen kamers beschikbaar!");
+		} else if (van == null){
+			throw new Exception("Geen Aankomstdatum gevonden.");
+		} else if (tot == null){
+			throw new Exception("Geen Vertrekdatum gevonden.");
+		} else if (naam == null){
+			throw new Exception("Geen naam gevonden.");
+		} else if (adres == null){
+			throw new Exception("Geen adres gevonden.");
+		} else if (type == null){
+			throw new Exception("Geen kamertype geselecteerd.");
 		}
+
 
 		Boeking boeking = new Boeking(van, tot);
 		boeking.setBoeker(new Klant(naam, adres));
